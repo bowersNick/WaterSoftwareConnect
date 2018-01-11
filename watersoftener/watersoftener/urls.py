@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from watersoftener.controls.views import ControlsView
+
 urlpatterns = [
+    path('controls/', ControlsView.as_view()),
     path('admin/', admin.site.urls),
 ]
