@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 <h1>Controls</h1>
     <ul>
+        <li>Salt Level {{ salt_level }}</li>
         <li>Vacation Mode: {{ vacation_mode }}</li>
+        <div>
+            <form action="/your-name/" method="post">
+                <input type="button" name="Inc">
+                <input type="button" name="Decs">
+            </form>
+
+        </div>
         <ul>
             <li>Days away: {{ days_away }}</li>
         </ul>
@@ -26,7 +29,5 @@
     </ul>
 <h1>Conditions</h1>
 <ul>
-    <li>System Alarm {{  }}</li>
 </ul>
-</body>
-</html>
+{% endblock %}
