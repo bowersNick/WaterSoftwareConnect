@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-<link rel="stylesheet" href="css/base.css">
+{% load staticfiles %}
+<link rel="stylesheet" href="../../static/css/base.css">
 {% block content %}
 <h1>Controls</h1>
     <ul>
@@ -13,8 +14,8 @@
 {#        <li>Vacation Mode: {{ vacation_mode }}</li>#}
         <div>
             <form action="/your-name/" method="post">
-                <button type="button" ><arrow class="up"></arrow></button>
-                <button type="button" class="down"></button>
+                <button style="background: url({% static "images/uparrow-15px.jpg" %})"></button>
+                <button style="background: url({% static "images/downarrow-15px.jpg" %})"</button>
             </form>
 
         </div>

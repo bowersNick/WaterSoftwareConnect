@@ -8,7 +8,7 @@ from django.views import View
 class ControlsView(View):
     # form_class = ControlsForm
     # initial = {'key': 'value'}
-    template_name = 'controls.html'
+    template_name = 'controls/index.html'
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name,
