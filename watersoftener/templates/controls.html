@@ -1,13 +1,20 @@
 {% extends "base.html" %}
+<link rel="stylesheet" href="css/base.css">
 {% block content %}
 <h1>Controls</h1>
     <ul>
         <li>Salt Level {{ salt_level }}</li>
-        <li>Vacation Mode: {{ vacation_mode }}</li>
+        <form action="post">
+        {% if vacation_mode %}
+        <li>Vacation Mode: <button type="button" >On</button></li>
+        {% else %}
+        <li>Vacation Mode: <button type="button" >Off</button></li>
+        {% endif %}</form>
+{#        <li>Vacation Mode: {{ vacation_mode }}</li>#}
         <div>
             <form action="/your-name/" method="post">
-                <input type="button" name="Inc">
-                <input type="button" name="Decs">
+                <button type="button" ><arrow class="up"></arrow></button>
+                <button type="button" class="down"></button>
             </form>
 
         </div>
@@ -22,10 +29,6 @@
         <li>Current Day: {{ current_day_of_week }}</li>
         <li>Current Date: {{ current_date }}</li>
         <li>Auto Daylight Savings Time: {{ auto_dst }}</li>
-        <li>Filter Schedule WK1/WK2: {{ filter_schedule }}</li>
-        <li>Time of Filter Regeneration: {{ time_filter_regen }}</li>
-        <li>Time of Air Regeneration: {{ time_air_regen }}</li>
-        <li>Number of Air Purges: {{ number_air_purges }}</li>
     </ul>
 <h1>Conditions</h1>
 <ul>

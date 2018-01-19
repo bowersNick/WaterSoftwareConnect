@@ -18,4 +18,5 @@ class ControlsView(View):
                        "current_date": arrow.now().format("M/D/YYYY"), "auto_dst": "Off", })
 
     def post(self, request, *args, **kwargs):
+        print(request)
         return render(request, self.template_name)

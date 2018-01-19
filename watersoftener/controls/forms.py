@@ -1,3 +1,4 @@
-# from django.forms.forms import Form
-#
-# class ControlsForm(Form):
+from django import forms
+
+class ControlsForm(forms.Form):
+    vacation_mode = forms.ChoiceField(("On", "Off"))
