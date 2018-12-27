@@ -4,32 +4,32 @@
 {% block content %}
 <h1>Controls</h1>
     <ul>
-        <li>Salt Level {{ salt_level }}</li>
-        <form action="post">
-        {% if vacation_mode %}
+        <li>Salt Level {{ object.salt_level }}</li>
+        <form action="/controls/" method="post">
+        {% if object.vacation_mode %}
         <li>Vacation Mode: <button type="button" >On</button></li>
         {% else %}
         <li>Vacation Mode: <button type="button" >Off</button></li>
         {% endif %}</form>
-{#        <li>Vacation Mode: {{ vacation_mode }}</li>#}
+        <li>Vacation Mode: {{ object.vacation_mode }}</li>
         <div>
-            <form action="/your-name/" method="post">
+            <form action="/controls/" method="post">
                 <button style="background: url({% static "images/uparrow-15px.jpg" %})"></button>
                 <button style="background: url({% static "images/downarrow-15px.jpg" %})"</button>
             </form>
 
         </div>
         <ul>
-            <li>Days away: {{ days_away }}</li>
+            <li>Days away: {{ object.days_away }}</li>
         </ul>
-        <li>System Alarm: {{ system_alarm }}</li>
+        <li>System Alarm: {{ object.system_alarm }}</li>
         <ul>
-            <li>Set for {{ system_alarm_time }}</li>
+            <li>Set for {{ object.system_alarm_time }}</li>
         </ul>
-        <li>Time of Day: {{ time_of_day }}</li>
-        <li>Current Day: {{ current_day_of_week }}</li>
-        <li>Current Date: {{ current_date }}</li>
-        <li>Auto Daylight Savings Time: {{ auto_dst }}</li>
+        <li>Time of Day: {{ object.time_of_day }}</li>
+        <li>Current Day: {{ object.current_day_of_week }}</li>
+        <li>Current Date: {{ object.current_date }}</li>
+        <li>Auto Daylight Savings Time: {{ object.auto_dst }}</li>
     </ul>
 <h1>Conditions</h1>
 <ul>
